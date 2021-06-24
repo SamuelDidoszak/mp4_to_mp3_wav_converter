@@ -1,0 +1,1 @@
+forfiles /s /m *.mp4 /c "cmd /c ffmpeg -i @FNAME.mp4 -f wav -bitexact -acodec pcm_s16le -ar 22050 -ac 1 @FNAME.wav && IF [%1] == [] GOTO :EOF (IF %1==/rm del @FNAME.mp4)"

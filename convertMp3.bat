@@ -1,0 +1,1 @@
+forfiles /s /m *.mp4 /c " cmd /c ffmpeg -i @FNAME.mp4 -acodec libmp3lame -b:a 320k -vn @FNAME.mp3 && IF [%1] == [] GOTO :EOF (IF %1==/rm del @FNAME.mp4)"
